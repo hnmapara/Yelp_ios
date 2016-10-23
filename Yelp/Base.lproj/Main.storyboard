@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="141" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="atn-CP-TyU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="103" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="atn-CP-TyU">
                                 <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusinessCell" rowHeight="141" id="B1l-ui-5TP" customClass="BusinessCell" customModule="Yelp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="141"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusinessCell" rowHeight="103" id="B1l-ui-5TP" customClass="BusinessCell" customModule="Yelp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="103"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B1l-ui-5TP" id="psm-kH-lfU">
-                                            <frame key="frameInset" width="375" height="140"/>
+                                            <frame key="frameInset" width="375" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1. Grand Pu Bah" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbN-zY-0ml">
@@ -42,7 +42,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88 Division st, Mission Bay" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVl-Of-nrf">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -76,12 +76,14 @@
                                                 <constraint firstItem="Gqc-UV-9Ki" firstAttribute="leading" secondItem="kVl-Of-nrf" secondAttribute="leading" id="HBn-9c-5ZZ"/>
                                                 <constraint firstItem="ogF-BR-mVQ" firstAttribute="top" secondItem="psm-kH-lfU" secondAttribute="top" constant="10" id="I5V-IM-KKg"/>
                                                 <constraint firstAttribute="trailing" secondItem="ogF-BR-mVQ" secondAttribute="trailing" constant="8" id="KdE-JP-hJW"/>
+                                                <constraint firstAttribute="trailing" secondItem="kVl-Of-nrf" secondAttribute="trailing" constant="8" id="dHZ-IN-j7v"/>
                                                 <constraint firstItem="dbN-zY-0ml" firstAttribute="leading" secondItem="WH0-HE-pFL" secondAttribute="trailing" constant="8" id="fTT-Wb-Jl9"/>
                                                 <constraint firstItem="ogF-BR-mVQ" firstAttribute="leading" secondItem="dbN-zY-0ml" secondAttribute="trailing" constant="8" id="hn3-rX-MO6"/>
                                                 <constraint firstItem="Gqc-UV-9Ki" firstAttribute="leading" secondItem="WH0-HE-pFL" secondAttribute="trailing" constant="8" id="i0L-x0-rZC"/>
                                                 <constraint firstItem="dbN-zY-0ml" firstAttribute="top" secondItem="psm-kH-lfU" secondAttribute="top" constant="8" id="i8y-Kg-Oil"/>
                                                 <constraint firstItem="vB3-9n-4ls" firstAttribute="top" secondItem="dbN-zY-0ml" secondAttribute="bottom" constant="5" id="jpB-2X-ARd"/>
                                                 <constraint firstItem="vB3-9n-4ls" firstAttribute="leading" secondItem="WH0-HE-pFL" secondAttribute="trailing" constant="8" id="nFs-B7-cmZ"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Gqc-UV-9Ki" secondAttribute="bottom" constant="8" id="nT7-4R-aVL"/>
                                                 <constraint firstItem="WH0-HE-pFL" firstAttribute="top" secondItem="psm-kH-lfU" secondAttribute="top" constant="7" id="tMn-LA-M0q"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WH0-HE-pFL" secondAttribute="bottom" constant="12" id="uXj-99-Kh2"/>
                                                 <constraint firstItem="kVl-Of-nrf" firstAttribute="top" secondItem="vB3-9n-4ls" secondAttribute="bottom" constant="3" id="yMd-yK-fYR"/>
