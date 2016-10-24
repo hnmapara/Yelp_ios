@@ -10,6 +10,8 @@ import UIKit
 
 class BusinessesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FiltersViewControllerDelegate, UISearchBarDelegate {
     
+    let segueIdFilter:String = "filter"
+    let segueIdMap:String = "map"
     var businesses: [Business]!
     
     @IBOutlet weak var tableView: UITableView!
@@ -136,10 +138,19 @@ class BusinessesViewController: UIViewController, UITableViewDelegate, UITableVi
      */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navigationController = segue.destination as! UINavigationController
-        let filtersViewController = navigationController.topViewController as! FiltersViewController
+        let id : String! = segue.identifier
         
-        filtersViewController.delegate = self
+        if (id == segueIdMap) {
+            let mapViewController = segue.destination as! MapViewController
+            mapViewController.businesses = businesses
+
+        } else {
+        
+            let navigationController = segue.destination as! UINavigationController
+            let filtersViewController = navigationController.topViewController as! FiltersViewController
+        
+            filtersViewController.delegate = self
+        }
     }
     
     func filtersViewController(filtersViewController: FiltersViewController, didUpdateFilters filters: [String : AnyObject]) {
