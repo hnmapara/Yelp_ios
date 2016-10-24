@@ -33,15 +33,36 @@ class FiltersViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @available(iOS 2.0, *)
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        switch section {
+        case 0 :
+            return filterDistance().count
+        case 1:
+            return filterSortBy().count
+        case 2:
+            return categories.count
+        default:
+            return 0
+        }
+        
     }
     
     
     @available(iOS 2.0, *)
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "SwitchCell", for: indexPath) as! SwitchCell
-        
-        cell.switchLabel.text = categories[indexPath.row]["name"]
+        switch indexPath.section {
+        case 0 :
+            cell.switchLabel.text = filterDistance()[indexPath.row]
+            break
+        case 1:
+            cell.switchLabel.text = filterSortBy()[indexPath.row]
+            break
+        case 2:
+            cell.switchLabel.text = categories[indexPath.row]["name"]
+            break
+        default:
+            break
+        }
         
         cell.delegate = self
         
@@ -72,7 +93,7 @@ class FiltersViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @available(iOS 2.0, *)
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {// fixed font style. use custom view (UILabel) if you want something different
-        return ""
+        return filterSections()[section]
     }
     
 
