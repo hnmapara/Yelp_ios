@@ -49,22 +49,29 @@ class FiltersViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @available(iOS 2.0, *)
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  tableView.dequeueReusableCell(withIdentifier: "SwitchCell", for: indexPath) as! SwitchCell
+        var switchCell: SwitchCell? = nil
         switch indexPath.section {
         case 0 :
-            cell.switchLabel.text = filterDistance()[indexPath.row]
-            break
+            //let singleChoiceCell: SingleChoiceCell = SingleChoiceCell(style: UITableViewCellStyle.default, reuseIdentifier: "SingleChoiceCell")
+            
+            let singleChoiceCell =  tableView.dequeueReusableCell(withIdentifier: "SingleChoiceCell", for: indexPath) as! SingleChoiceCell
+            singleChoiceCell.singleChoiceTitle.text = filterDistance()[indexPath.row]
+            return singleChoiceCell
         case 1:
-            cell.switchLabel.text = filterSortBy()[indexPath.row]
-            break
+            //let singleChoiceCell: SingleChoiceCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "SingleChoiceCell") as! SingleChoiceCell
+            let singleChoiceCell =  tableView.dequeueReusableCell(withIdentifier: "SingleChoiceCell", for: indexPath) as! SingleChoiceCell
+            singleChoiceCell.singleChoiceTitle.text = filterSortBy()[indexPath.row]
+            return singleChoiceCell
         case 2:
-            cell.switchLabel.text = categories[indexPath.row]["name"]
+            //switchCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "SwitchCell") as! SwitchCell
+            switchCell =  tableView.dequeueReusableCell(withIdentifier: "SwitchCell", for: indexPath) as! SwitchCell
+            switchCell!.switchLabel.text = categories[indexPath.row]["name"]
             break
         default:
             break
         }
         
-        cell.delegate = self
+        switchCell!.delegate = self
         
 //        if (switchStates[indexPath?.row] != nil) {
 //            cell.onSwitch.isOn = switchStates[indexPath?.row]
@@ -73,8 +80,8 @@ class FiltersViewController: UIViewController, UITableViewDelegate, UITableViewD
 //        }
         //Below line is shortcut
         
-        cell.onSwitch.isOn = switchStates[indexPath.row] ?? false
-        return cell
+        switchCell!.onSwitch.isOn = switchStates[indexPath.row] ?? false
+        return switchCell!
     }
     
     func swithcCell(switchCell: SwitchCell, didChangedValue value: Bool) {

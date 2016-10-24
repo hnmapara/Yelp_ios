@@ -161,6 +161,30 @@
                                             <outlet property="switchLabel" destination="ldW-eh-tcZ" id="KUm-Nh-4Ee"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SingleChoiceCell" rowHeight="64" id="6KP-o8-mbB" customClass="SingleChoiceCell" customModule="Yelp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="156" width="375" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6KP-o8-mbB" id="jil-QD-kgv">
+                                            <frame key="frameInset" width="375" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCb-6k-t5L">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SCb-6k-t5L" firstAttribute="centerY" secondItem="jil-QD-kgv" secondAttribute="centerY" id="TSf-42-ivy"/>
+                                                <constraint firstItem="SCb-6k-t5L" firstAttribute="centerY" secondItem="jil-QD-kgv" secondAttribute="centerY" id="VjN-CL-fcR"/>
+                                                <constraint firstItem="SCb-6k-t5L" firstAttribute="leading" secondItem="jil-QD-kgv" secondAttribute="leading" constant="8" id="Ycb-sH-35b"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="singleChoiceTitle" destination="SCb-6k-t5L" id="f2l-ej-tbR"/>
+                                            <outlet property="switchLabel" destination="SCb-6k-t5L" id="nbx-01-fN6"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
