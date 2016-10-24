@@ -40,6 +40,7 @@ class FiltersViewController: UIViewController, UITableViewDelegate, UITableViewD
     @available(iOS 2.0, *)
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "SwitchCell", for: indexPath) as! SwitchCell
+        
         cell.switchLabel.text = categories[indexPath.row]["name"]
         
         cell.delegate = self
@@ -62,16 +63,17 @@ class FiltersViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
-//    @available(iOS 2.0, *)
-//    optional public func numberOfSections(in tableView: UITableView) -> Int {
-//    // Default is 1 if not implemented
-////        return super.numberOfSections(tableView)
-//    }
+    @available(iOS 2.0, *)
+    public func numberOfSections(in tableView: UITableView) -> Int {
+    // Default is 1 if not implemented
+        return 3
+    }
     
     
-//    @available(iOS 2.0, *)
-//    optional public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {// fixed font style. use custom view (UILabel) if you want something different
-//    }
+    @available(iOS 2.0, *)
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {// fixed font style. use custom view (UILabel) if you want something different
+        return ""
+    }
     
 
     @IBAction func onCancelButton(_ sender: AnyObject) {
@@ -116,8 +118,38 @@ class FiltersViewController: UIViewController, UITableViewDelegate, UITableViewD
             ["name" : "American, New", "code" : "newamerican"],
             ["name" : "Arabian", "code" : "arabian"],
             ["name" : "Arabian", "code" : "arabian"],
-            ["name" : "Mexican", "code" : "mexican"]
+            ["name" : "Mexican", "code" : "mexican"],
+            ["name" : "Indian", "code" : "indpak"],
+            ["name" : "Japanese", "code" : "japanese"],
+            ["name" : "Korean", "code" : "korean"],
+            ["name" : "Halal", "code" : "halal"]
         ]
     }
+    
+    func filterSections() -> [String] {
+        return [
+                "Distance",
+                "Sort By",
+                "Category"
+                ]
+    }
+    
+    func filterDistance() -> [String] {
+        return [
+            "Auto",
+            "0.3 mile",
+            "1 mile"
+        ]
+    }
+    
+    func filterSortBy() -> [String] {
+        return [
+            "Best Match",
+            "A->Z",
+            "Z->A",
+            "Prince low to high"
+        ]
+    }
+    
 
 }
